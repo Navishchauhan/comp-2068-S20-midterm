@@ -3,15 +3,15 @@
 <div class="container my-5">
   <header>
     <h1>
-      Reservation for <%= // replace this comment with restaurant name %>
+      Reservation for <%= reservation.restaurant %>
     </h1>
   </header>
   <hr>
   <div>
     <p>
-      <strong>For:</strong>&nbsp;<%= // replace this comment with the user's full name %>
+      <strong>For:</strong>&nbsp;<%= reservation.user.fullname %>
       <br>
-      <strong>At:</strong>&nbsp;<%= // replace this comment with the date of the reservation %>
+      <strong>At:</strong>&nbsp;<%= reservation.date %>
     </p>
   </div>
   <hr>

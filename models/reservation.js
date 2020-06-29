@@ -1,6 +1,32 @@
+const mongoose = require('mongoose');
+
 // You need to define the schema for a reservation
-// The fields you require are:
-// associated user
-// quantity of guests
-// restaurant name
-// date and time of reservation (you can do these as separate fields if you wish) 
+const ReservationSchema = new mongoose.Schema({
+    // associated user
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required: true
+    },
+    // quantity of guests
+    guests: {
+        type: Number,
+        required: true
+    },
+    // restaurant name
+    restaurant: {
+        type: String,
+        enum: ['Kelseys', 'Montanas', 'Outbacks', 'Harveys', 'Swiss Chalet'],
+        default: 'Kelseys' 
+    },
+    // date
+    date: {
+        type: Date,
+        required: true 
+    },
+    //time
+    time: {
+        type: Number,
+        required: true
+    }
+});
